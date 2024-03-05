@@ -1,0 +1,4 @@
+alias py='python3 '
+alias auth='py auth.py'
+alias callback='py callback.py'
+alias p='git add -u; git commit -m "updates"; git push origin master;'
