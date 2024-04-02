@@ -8,8 +8,15 @@ import glob
 from random import shuffle
 from jsondb import Object
 from looplipy import Wav
+from argparse import ArgumentParser
+
+ap = ArgumentParser()
+ap.add_argument('--dry-run','-d',action='store_true')
+args,_ = ap.parse_known_args()
+
 
 files = glob.glob(os.getenv('queue_glob'))
+
 shuffle(files)
 
 uploaded_loops = Object('data/uploaded_loops.json')
@@ -24,7 +31,7 @@ loop_f = avail_loops.pop()
 uploaded_loops[basename(loop_f)] = 1
 
 loop = Wav(loop_f).round_bpm()
-title =  "%dBPM Industrial Drum Loop #%d" % (loop.bpm() , len(uploaded_loops.data.keys()) )
+title =  "%d BPM Industrial Drum Loop #%d" % (loop.bpm() , len(uploaded_loops.data.keys()) )
 desc = ('This %dbpm' % loop.bpm()) + " Drum Loop is good for Ambient/Industrial/Electronic songs or as soundtrack to a sci-fi/suspense/horror indie game or short film."
 
 url = "https://freesound.org/apiv2/sounds/upload/"
@@ -46,6 +53,10 @@ data = {
 }
 
 print(data)
+
+if args.dry_run:
+    print("Avail loops: %d" % len(avail_loops))
+    exit()
 
 print("Posting...")
 response = requests.post(url, headers=headers, files=files, data=data)
