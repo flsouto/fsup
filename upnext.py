@@ -41,7 +41,7 @@ if 'gli' in loop_f:
     type = 'Glitch'
 
 title =  "%d BPM Industrial %s Loop #%d (WAV)" % (loop.bpm() , type , len(uploaded_loops.data.keys()) )
-desc = ('This %dbpm' % loop.bpm()) + " Drum Loop is good for Ambient/Industrial/Electronic songs or as soundtrack to a sci-fi/suspense/horror indie game or short film."
+desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or as soundtrack to a sci-fi/suspense/horror indie game or short film."
 
 url = "https://freesound.org/apiv2/sounds/upload/"
 token = json.loads(open('token.json').read())
