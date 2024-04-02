@@ -40,8 +40,17 @@ if 'amb' in loop_f:
 if 'gli' in loop_f:
     type = 'Glitch'
 
+
+if 'exc' in loop_f:
+    pack = 'Especial Loops'
+else:
+    if loop.bpm() in [80,100,120]:
+        pack = "%d BPM Loops" % loop.bpm()
+    else:
+        pack = f'{type} Loops'
+
 title =  "%d BPM Industrial %s Loop #%d (WAV)" % (loop.bpm() , type , len(uploaded_loops.data.keys()) )
-desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or as soundtrack to a sci-fi/suspense/horror indie game or short film."
+desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or using as soundtrack to a sci-fi/suspense/horror indie game or short film."
 
 url = "https://freesound.org/apiv2/sounds/upload/"
 token = json.loads(open('token.json').read())
@@ -58,7 +67,8 @@ data = {
     "name": title,
     "description": desc,
     "license" : "Attribution",
-    "tags": "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
+    "tags": "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien",
+    "pack": pack
 }
 
 print(data)
