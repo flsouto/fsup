@@ -31,7 +31,16 @@ loop_f = avail_loops.pop()
 uploaded_loops[basename(loop_f)] = 1
 
 loop = Wav(loop_f).round_bpm()
-title =  "%d BPM Industrial Drum Loop #%d" % (loop.bpm() , len(uploaded_loops.data.keys()) )
+
+type = 'Drum'
+
+if 'amb' in loop_f:
+    type = 'Ambient'
+
+if 'gli' in loop_f:
+    type = 'Glitch'
+
+title =  "%d BPM Industrial %s Loop #%d (WAV)" % (loop.bpm() , type , len(uploaded_loops.data.keys()) )
 desc = ('This %dbpm' % loop.bpm()) + " Drum Loop is good for Ambient/Industrial/Electronic songs or as soundtrack to a sci-fi/suspense/horror indie game or short film."
 
 url = "https://freesound.org/apiv2/sounds/upload/"
