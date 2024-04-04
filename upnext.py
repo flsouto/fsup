@@ -52,6 +52,9 @@ if 'hor' in loop_f:
 if 'dro' in loop_f:
     type = 'Drone'
 
+if 'brk' in loop_f:
+    type = 'Breakbeat'
+
 
 if 'exc' in loop_f:
     pack = 'Especial Loops'
