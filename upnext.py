@@ -46,6 +46,9 @@ if 'tri' in loop_f:
 if 'noi' in loop_f:
     type = 'Noise'
 
+if 'hor' in loop_f:
+    type = 'Horror'
+
 
 if 'exc' in loop_f:
     pack = 'Especial Loops'
