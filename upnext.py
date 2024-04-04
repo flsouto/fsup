@@ -58,9 +58,6 @@ if 'brk' in loop_f:
 if 'har' in loop_f:
     type = 'Hardcore'
 
-if 'idm' in loop_f:
-    type = 'IDM'
-
 if 'syn' in loop_f:
     type = 'Synth'
 
