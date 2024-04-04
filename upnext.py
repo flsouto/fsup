@@ -40,6 +40,12 @@ if 'amb' in loop_f:
 if 'gli' in loop_f:
     type = 'Glitch'
 
+if 'tri' in loop_f:
+    type = 'Tribal'
+
+if 'noi' in loop_f:
+    type = 'Noise'
+
 
 if 'exc' in loop_f:
     pack = 'Especial Loops'
