@@ -55,6 +55,9 @@ if 'dro' in loop_f:
 if 'brk' in loop_f:
     type = 'Breakbeat'
 
+if 'syn' in loop_f:
+    type = 'Synth'
+
 
 if 'exc' in loop_f:
     pack = 'Especial Loops'
