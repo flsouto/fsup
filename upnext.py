@@ -49,6 +49,9 @@ if 'noi' in loop_f:
 if 'hor' in loop_f:
     type = 'Horror'
 
+if 'dro' in loop_f:
+    type = 'Drone'
+
 
 if 'exc' in loop_f:
     pack = 'Especial Loops'
