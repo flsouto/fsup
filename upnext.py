@@ -55,6 +55,12 @@ if 'dro' in loop_f:
 if 'brk' in loop_f:
     type = 'Breakbeat'
 
+if 'har' in loop_f:
+    type = 'Hardcore'
+
+if 'idm' in loop_f:
+    type = 'IDM'
+
 if 'syn' in loop_f:
     type = 'Synth'
 
