@@ -14,8 +14,7 @@ ap = ArgumentParser()
 ap.add_argument('--dry-run','-d',action='store_true')
 args,_ = ap.parse_known_args()
 
-
-files = glob.glob(os.getenv('queue_glob'))
+files = [f for p in os.getenv('queue_glob').split(';') for f in glob.glob(p)]
 
 shuffle(files)
 
@@ -61,8 +60,10 @@ if 'har' in loop_f:
 if 'syn' in loop_f:
     type = 'Synth'
 
+if 'asmr' in loop_f:
+    type = 'ASMR'
 
-if 'exc' in loop_f:
+if 'exc' in loop_f and not 'asmr' in loop_f:
     pack = 'Especial Loops'
 else:
     if loop.bpm() in [80,100,120]:
