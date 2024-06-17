@@ -31,48 +31,62 @@ uploaded_loops[basename(loop_f)] = 1
 
 loop = Wav(loop_f).round_bpm()
 
-type = 'Drum'
+if not 'trk' in loop_f:
 
-if 'amb' in loop_f:
-    type = 'Ambient'
+    type = 'Drum'
 
-if 'gli' in loop_f:
-    type = 'Glitch'
+    if 'amb' in loop_f:
+        type = 'Ambient'
 
-if 'tri' in loop_f:
-    type = 'Tribal'
+    if 'gli' in loop_f:
+        type = 'Glitch'
 
-if 'noi' in loop_f:
-    type = 'Noise'
+    if 'tri' in loop_f:
+        type = 'Tribal'
 
-if 'hor' in loop_f:
-    type = 'Horror'
+    if 'noi' in loop_f:
+        type = 'Noise'
 
-if 'dro' in loop_f:
-    type = 'Drone'
+    if 'hor' in loop_f:
+        type = 'Horror'
 
-if 'brk' in loop_f:
-    type = 'Breakbeat'
+    if 'dro' in loop_f:
+        type = 'Drone'
 
-if 'har' in loop_f:
-    type = 'Hardcore'
+    if 'brk' in loop_f:
+        type = 'Breakbeat'
 
-if 'syn' in loop_f:
-    type = 'Synth'
+    if 'har' in loop_f:
+        type = 'Hardcore'
 
-if 'asmr' in loop_f:
-    type = 'ASMR'
+    if 'syn' in loop_f:
+        type = 'Synth'
 
-if 'exc' in loop_f and not 'asmr' in loop_f:
-    pack = 'Especial Loops'
-else:
-    if loop.bpm() in [80,100,120]:
-        pack = "%d BPM Loops" % loop.bpm()
+    if 'asmr' in loop_f:
+        type = 'ASMR'
+
+    if 'exc' in loop_f and not 'asmr' in loop_f:
+        pack = 'Especial Loops'
     else:
-        pack = f'{type} Loops'
+        if loop.bpm() in [80,100,120]:
+            pack = "%d BPM Loops" % loop.bpm()
+        else:
+            pack = f'{type} Loops'
 
-title =  "%d BPM Industrial %s Loop #%d (WAV)" % (loop.bpm() , type , len(uploaded_loops.data.keys()) )
-desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or using as soundtrack to a sci-fi/suspense/horror indie game or short film."
+
+    title =  "%d BPM Industrial %s Loop #%d (WAV)" % (loop.bpm() , type , len(uploaded_loops.data.keys()) )
+    desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or using as soundtrack to a sci-fi/suspense/horror indie game or short film."
+    tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
+else:
+    pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
+    if loop.len() > 60:
+        title = "Demo Track #%d" % (len(pub_trks))
+        pack = "Demo Tracks"
+    else:
+        title = "Short Track #%d" % (len(pub_trks))
+        pack = "Short Tracks"
+    desc = "This track was made using a couple of loops from my own collection of industrial drum & ambient loops. It can be used as soundtrack to an indie game or short movie with sci-fi and/or survival horror elements."
+    tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial"
 
 url = "https://freesound.org/apiv2/sounds/upload/"
 token = json.loads(open('token.json').read())
@@ -89,7 +103,7 @@ data = {
     "name": title,
     "description": desc,
     "license" : "Attribution",
-    "tags": "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien",
+    "tags": tags,
     "pack": pack
 }
 
@@ -99,7 +113,7 @@ if args.dry_run:
     print("Avail loops: %d" % len(avail_loops))
     exit()
 
-print("Posting...")
+print(f"Posting {loop_f}...")
 response = requests.post(url, headers=headers, files=files, data=data)
 
 if response.status_code == 201:
