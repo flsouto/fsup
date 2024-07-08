@@ -128,3 +128,4 @@ else:
     print("Error uploading audio:")
     print(response.text)
 
+os.system('python3 refresh-token.py')
