@@ -127,5 +127,8 @@ if response.status_code == 201:
 else:
     print("Error uploading audio:")
     print(response.text)
+    if 'already part of freesound' in response.text:
+    	uploaded_loops.save()
 
 os.system('python3 refresh-token.py')
+os.system('git add -u; git commit -m "updates"; git push origin master');
