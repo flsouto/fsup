@@ -131,4 +131,4 @@ else:
     	uploaded_loops.save()
 
 os.system('python3 refresh-token.py')
-os.system('git add -u; git commit -m "updates"; git push origin master');
+os.system('git add -u; git commit -m "updates"; git push origin $(git branch --show-current)');
