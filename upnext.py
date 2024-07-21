@@ -9,6 +9,7 @@ from random import shuffle
 from jsondb import Object
 from looplipy import Wav
 from argparse import ArgumentParser
+from datetime import datetime
 
 ap = ArgumentParser()
 ap.add_argument('--dry-run','-d',action='store_true')
@@ -88,6 +89,7 @@ else:
     desc = "This track was made using a couple of loops from my own collection of industrial drum & ambient loops. It can be used as soundtrack to an indie game or short movie with sci-fi and/or survival horror elements."
     tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial"
 
+pack += ' '+datetime.today().strftime('%m/%Y')
 url = "https://freesound.org/apiv2/sounds/upload/"
 token = json.loads(open('token.json').read())
 headers = {
