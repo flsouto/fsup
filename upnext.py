@@ -16,7 +16,6 @@ ap.add_argument('--dry-run','-d',action='store_true')
 args,_ = ap.parse_known_args()
 
 files = [f for p in os.getenv('queue_glob').split(';') for f in glob.glob(p)]
-
 shuffle(files)
 
 uploaded_loops = Object('data/uploaded_loops.json')
@@ -81,13 +80,13 @@ if not 'trk' in loop_f:
 else:
     pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
     if loop.len() > 60:
-        title = "Demo Track #%d" % (len(pub_trks))
+        title = "[Industraumatic] Demo Track #%d" % (len(pub_trks))
         pack = "Demo Tracks"
     else:
-        title = "Short Track #%d" % (len(pub_trks))
+        title = "[Industraumatic] Short Track #%d" % (len(pub_trks))
         pack = "Short Tracks"
-    desc = "This track was made using a couple of loops from my own collection of industrial drum & ambient loops. It can be used as soundtrack to an indie game or short movie with sci-fi and/or survival horror elements."
-    tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial"
+    desc = "This track belongs to a related project called \"Industraumatic\". Please subscribe here: https://www.youtube.com/@industraumatic"
+    tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
 pack += ' '+datetime.today().strftime('%m/%Y')
 url = "https://freesound.org/apiv2/sounds/upload/"
