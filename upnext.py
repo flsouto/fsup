@@ -80,11 +80,11 @@ if not 'trk' in loop_f:
 else:
     pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
     if loop.len() > 60:
-        title = "[Industraumatic] Demo Track #%d" % (len(pub_trks))
-        pack = "Demo Tracks"
+        title = "Demo Track #%d (Industraumatic)" % (len(pub_trks))
+        pack = "Industraumatic Demos"
     else:
-        title = "[Industraumatic] Short Track #%d" % (len(pub_trks))
-        pack = "Short Tracks"
+        title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
+        pack = "Industraumatic Shorts"
     desc = "This track belongs to a related project called \"Industraumatic\". Please subscribe here: https://www.youtube.com/@industraumatic"
     tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
