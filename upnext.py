@@ -85,7 +85,7 @@ else:
     else:
         title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
         pack = "Industraumatic Shorts"
-    desc = "This track belongs to a related project called \"Industraumatic\". Please subscribe here: https://www.youtube.com/@industraumatic"
+    desc = "Track taken from the Industraumatic Project. Please subscribe here: https://www.youtube.com/@industraumatic"
     tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
 pack += ' '+datetime.today().strftime('%m/%Y')
