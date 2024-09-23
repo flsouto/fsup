@@ -29,9 +29,11 @@ if len(avail_loops) < 1:
 loop_f = avail_loops.pop()
 uploaded_loops[basename(loop_f)] = 1
 
-loop = Wav(loop_f).round_bpm()
+loop = Wav(loop_f)
 
 if not 'trk' in loop_f:
+
+    loop = loop.round_bpm()
 
     type = 'Drum'
 
@@ -85,7 +87,7 @@ else:
     else:
         title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
         pack = "Industraumatic Shorts"
-    desc = "Track taken from the Industraumatic Project. Please subscribe here: https://www.youtube.com/@industraumatic"
+    desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
     tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
 pack += ' '+datetime.today().strftime('%m/%Y')
