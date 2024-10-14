@@ -12,12 +12,9 @@ from argparse import ArgumentParser
 from datetime import datetime
 import time
 import sys
+from fls import *
 
-input_data = None
-if not sys.stdin.isatty():
-    input_data = sys.stdin.read().splitlines()
-
-files = input_data or [f for p in os.getenv('queue_glob').split(';') for f in glob.glob(p)]
+files = stdin_lines() or [f for p in os.getenv('queue_glob').split(';') for f in glob.glob(p)]
 
 uploaded_loops = Object('data/uploaded_loops.json')
 target_loops = [f for f in files if basename(f) in uploaded_loops]
