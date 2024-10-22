@@ -68,7 +68,7 @@ if not 'trk' in loop_f:
         type = 'ASMR'
 
     if 'exc' in loop_f and not 'asmr' in loop_f:
-        pack = 'Especial Loops'
+        pack = 'Special Loops'
     else:
         if loop.bpm() in [80,100,120]:
             pack = "%d BPM Loops" % loop.bpm()
