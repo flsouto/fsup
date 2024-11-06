@@ -84,7 +84,7 @@ else:
         pub_trks = [k for k in uploaded_loops.data.keys() if 'trklg' in k]
         title = "Looppelganger #%s" % (len(pub_trks))
         pack = "Looppelganger"
-        desc = "Use this as background noise to some kind of creepy or horror content."
+        desc = "Use this as background to some creepy or horror content."
         tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Noise, Ambience, Darkness, Gothic, Weird"
 
     else:
