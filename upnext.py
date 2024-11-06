@@ -82,10 +82,10 @@ if not 'trk' in loop_f:
 else:
     if 'trklg' in loop_f:
         pub_trks = [k for k in uploaded_loops.data.keys() if 'trklg' in k]
-        title = "Looppelganger #%s" % (len(pub_trks))
+        title = "Looppelganger #%s | Dark Ambient Sound" % (len(pub_trks))
         pack = "Looppelganger"
         desc = "Use this as background to some creepy or horror content."
-        tags = "Drone, Ambient, Underground, Games, Sci-fi, Horror, Noise, Ambience, Darkness, Soundtrack, Gothic, Weird"
+        tags = "Drone, Ambient, Underground, Games, Sci-fi, Horror, Noise, Ambience, Darkness, Soundtrack, Gothic, Weird, Survival Horror, Silent Hill"
 
     else:
         pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
