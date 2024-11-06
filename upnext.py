@@ -80,17 +80,27 @@ if not 'trk' in loop_f:
     desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or using as soundtrack to a sci-fi/suspense/horror indie game or short film."
     tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
 else:
-    pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
-    if loop.len() > 60:
-        title = "Demo Track #%d (Industraumatic)" % (len(pub_trks))
-        pack = "Industraumatic Demos"
-    else:
-        title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
-        pack = "Industraumatic Shorts"
-    desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
-    tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
+    if 'trklg' in loop_f:
+        pub_trks = [k for k in uploaded_loops.data.keys() if 'trklg' in k]
+        title = "Looppelganger #%s" % (len(pub_trks))
+        pack = "Looppelganger"
+        desc = "Use this as background noise to some kind of creepy or horror content."
+        tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Noise, Ambience, Darkness, Gothic, Weird"
 
-pack += ' '+datetime.today().strftime('%m/%Y')
+    else:
+        pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
+        if loop.len() > 60:
+            title = "Demo Track #%d (Industraumatic)" % (len(pub_trks))
+            pack = "Industraumatic Demos"
+        else:
+            title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
+            pack = "Industraumatic Shorts"
+        desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
+        tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
+
+if not 'trklg' in loop_f:
+    pack += ' '+datetime.today().strftime('%m/%Y')
+
 url = "https://freesound.org/apiv2/sounds/upload/"
 token = json.loads(open('token.json').read())
 headers = {
