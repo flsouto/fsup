@@ -8,8 +8,8 @@ token = json.loads(open('token.json', 'r').read())
 
 url = "https://freesound.org/apiv2/oauth2/access_token/"
 payload = {
-    "client_id": getenv("client_id"),
-    "client_secret": getenv("client_secret"),
+    "client_id": getenv("FREESOUND_ID"),
+    "client_secret": getenv("FREESOUND_SECRET"),
     "refresh_token" : token['refresh_token'],
     "grant_type": "refresh_token"
 }
