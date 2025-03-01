@@ -16,6 +16,7 @@ payload = {
 
 response = requests.post(url, data=payload)
 
-open('token.json', 'w+').write(response.text)
+if '"access_token"' in response.text:
+    open('token.json', 'w+').write(response.text)
 
 print(response.text)
