@@ -64,6 +64,7 @@ if not 'trk' in loop_f:
 
     if 'syn' in loop_f:
         type = 'Synth'
+        bst_category = 'is-e'
 
     if 'asmr' in loop_f:
         type = 'ASMR'
