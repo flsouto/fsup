@@ -36,6 +36,7 @@ if not 'trk' in loop_f:
     loop = loop.round_bpm()
 
     type = 'Drum'
+    bst_category = 'is-p'
 
     if 'amb' in loop_f:
         type = 'Ambient'
@@ -86,8 +87,9 @@ else:
         pack = "Looppelganger"
         desc = "Use this as background to some creepy or horror content."
         tags = "Drone, Ambient, Underground, Games, Sci-fi, Horror, Noise, Ambience, Darkness, Soundtrack, Gothic, Weird, Survival Horror, Silent Hill"
-
+        bst_category = 'ss-s'
     else:
+        bst_category = 'm-m'
         pub_trks = [k for k in uploaded_loops.data.keys() if 'trk' in k]
         if loop.len() > 60:
             title = "Demo Track #%d (Industraumatic)" % (len(pub_trks))
@@ -117,7 +119,8 @@ data = {
     "description": desc,
     "license" : "Attribution",
     "tags": tags,
-    "pack": pack
+    "pack": pack,
+    "bst_category": bst_category
 }
 
 print(data)
