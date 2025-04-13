@@ -40,9 +40,11 @@ if not 'trk' in loop_f:
 
     if 'amb' in loop_f:
         type = 'Ambient'
+        bst_category = 'ss-s'
 
     if 'gli' in loop_f:
         type = 'Glitch'
+        bst_category = 'fx-ex'
 
     if 'tri' in loop_f:
         type = 'Tribal'
