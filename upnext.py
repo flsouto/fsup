@@ -120,7 +120,7 @@ files = {
 data = {
     "name": title,
     "description": desc,
-    "license" : "Creative",
+    "license" : "Creative Commons",
     "tags": tags,
     "pack": pack,
     "bst_category": bst_category
