@@ -10,6 +10,7 @@ from jsondb import Object
 from looplipy import Wav
 from argparse import ArgumentParser
 from datetime import datetime
+import random
 
 ap = ArgumentParser()
 ap.add_argument('--dry-run','-d',action='store_true')
@@ -30,6 +31,29 @@ loop_f = avail_loops.pop()
 uploaded_loops[basename(loop_f)] = 1
 
 loop = Wav(loop_f)
+
+adv_loop_vids = []
+adv_track_vids = []
+
+try:
+    if os.getenv('adv_loop_vids'):
+        with open(os.getenv('adv_loop_vids')) as f:
+            adv_loop_vids = [i.strip() for i in f.readlines()]
+except:
+    pass
+
+adv_loop_vid = random.choice(adv_loop_vids)
+
+
+try:
+    if os.getenv('adv_track_vids'):
+        with open(os.getenv('adv_track_vids')) as f:
+            adv_track_vids = [i.strip() for i in f.readlines()]
+except:
+    pass
+
+#adv_track_vid = random.choice(adv_track_vids)
+
 
 if not 'trk' in loop_f:
 
