@@ -33,26 +33,28 @@ uploaded_loops[basename(loop_f)] = 1
 loop = Wav(loop_f)
 
 adv_loop_vids = []
+adv_loop_vid = None
+adv_loop_desc = os.getenv('adv_loop_desc')
 adv_track_vids = []
+adv_track_vid = None
+adv_track_desc = os.getenv('adv_track_desc')
 
 try:
     if os.getenv('adv_loop_vids'):
         with open(os.getenv('adv_loop_vids')) as f:
             adv_loop_vids = [i.strip() for i in f.readlines()]
+    adv_loop_vid = random.choice(adv_loop_vids)
 except:
     pass
-
-adv_loop_vid = random.choice(adv_loop_vids)
-
 
 try:
     if os.getenv('adv_track_vids'):
         with open(os.getenv('adv_track_vids')) as f:
             adv_track_vids = [i.strip() for i in f.readlines()]
+    adv_track_vid = random.choice(adv_track_vids)
 except:
     pass
 
-#adv_track_vid = random.choice(adv_track_vids)
 
 
 if not 'trk' in loop_f:
@@ -106,6 +108,13 @@ if not 'trk' in loop_f:
 
     title =  "%d BPM Industrial %s Loop #%d (WAV)" % (loop.bpm() , type , len(uploaded_loops.data.keys()) )
     desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or using as soundtrack to a sci-fi/suspense/horror indie game or short film."
+    if adv_loop_vid:
+        vid_url = f"https://www.youtube.com/watch?v={adv_loop_vid}";
+        desc += "\n"+adv_loop_desc.format(vid_url)
+
+    print(desc)
+    exit()
+    
     tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
 else:
     if 'trklg' in loop_f:
