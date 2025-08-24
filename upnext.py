@@ -112,9 +112,6 @@ if not 'trk' in loop_f:
         vid_url = f"https://www.youtube.com/watch?v={adv_loop_vid}";
         desc += "\n"+adv_loop_desc.format(vid_url)
 
-    print(desc)
-    exit()
-    
     tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
 else:
     if 'trklg' in loop_f:
@@ -135,6 +132,11 @@ else:
             pack = "Industraumatic Shorts"
         desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
         tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
+
+    if adv_track_vid:
+        vid_url = f"https://www.youtube.com/watch?v={adv_track_vid}";
+        desc += "\n"+adv_track_desc.format(vid_url)
+
 
 if not 'trklg' in loop_f:
     pack += ' '+datetime.today().strftime('%m/%Y')
