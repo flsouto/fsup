@@ -110,7 +110,8 @@ if not 'trk' in loop_f:
     desc = ('This %dbpm' % loop.bpm()) + f" {type} Loop is good for composing Industrial/Electronic/Ambient songs or using as soundtrack to a sci-fi/suspense/horror indie game or short film."
     if adv_loop_vid:
         vid_url = f"https://www.youtube.com/watch?v={adv_loop_vid}";
-        desc += "\n"+adv_loop_desc.format(vid_url)
+        vid_link = f"<a href=\"{vid_url}\">{vid_url}</a>";
+        desc += "\n"+adv_loop_desc.format(vid_link)
 
     tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
 else:
@@ -134,8 +135,9 @@ else:
         tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
     if adv_track_vid:
-        vid_url = f"https://www.youtube.com/watch?v={adv_track_vid}";
-        desc += "\n"+adv_track_desc.format(vid_url)
+        vid_url = f"https://www.youtube.com/watch?v={adv_track_vid}"
+        vid_link = f"<a href=\"{vid_url}\">{vid_url}</a>";
+        desc += "\n"+adv_track_desc.format(vid_link)
 
 
 if not 'trklg' in loop_f:
