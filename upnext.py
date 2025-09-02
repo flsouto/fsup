@@ -131,7 +131,8 @@ else:
         else:
             title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
             pack = "Industraumatic Shorts"
-        desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
+    #    desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
+        desc = ""
         tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
     if adv_track_vid:
