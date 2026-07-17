@@ -138,7 +138,7 @@ else:
     if adv_track_vid:
         vid_url = f"https://www.youtube.com/watch?v={adv_track_vid}"
         vid_link = f"<a href=\"{vid_url}\">{vid_url}</a>";
-        desc += "\n"+adv_track_desc.format(vid_link)
+        #desc += "\n"+adv_track_desc.format(vid_link)
 
 
 if not 'trklg' in loop_f:
