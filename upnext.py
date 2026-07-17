@@ -111,7 +111,7 @@ if not 'trk' in loop_f:
     if adv_loop_vid:
         vid_url = f"https://www.youtube.com/watch?v={adv_loop_vid}";
         vid_link = f"<a href=\"{vid_url}\">{vid_url}</a>";
-        desc += "\n"+adv_loop_desc.format(vid_link)
+        #desc += "\n"+adv_loop_desc.format(vid_link)
 
     tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
 else:
@@ -131,8 +131,8 @@ else:
         else:
             title = "Short Track #%d (Industraumatic)" % (len(pub_trks))
             pack = "Industraumatic Shorts"
-    #    desc = "Track taken from the Industraumatic Project. Please subscribe here: <a href=\"https://www.youtube.com/@industraumatic\">https://www.youtube.com/@industraumatic</a>"
-        desc = ""
+        desc = "Track taken from the Industraumatic Project which combines loops exported from looplicator in order to create Rhythmic Noise tracks."
+        #desc = ""
         tags = "Soundtrack, Ambient, Underground, Games, Sci-fi, Horror, Industrial, Noise, Cyberpunk"
 
     if adv_track_vid:
