@@ -111,7 +111,7 @@ if not 'trk' in loop_f:
     if adv_loop_vid:
         vid_url = f"https://www.youtube.com/watch?v={adv_loop_vid}";
         vid_link = f"<a href=\"{vid_url}\">{vid_url}</a>";
-        desc += "\nSubscribe to my youtube cnannel to become part of my community: "+adv_loop_desc.format(vid_link)
+        desc += "\n"+adv_loop_desc.format(vid_link)
 
     tags =  "Industrial Loop, Drum Loop, Ambient Loop, Loop Packs, Loopable, Samples, Soundtrack, Underground, Dark, Weird, Alien"
 else:
@@ -137,7 +137,7 @@ else:
     if adv_track_vid:
         vid_url = f"https://www.youtube.com/watch?v={adv_track_vid}"
         vid_link = f"<a href=\"{vid_url}\">{vid_url}</a>";
-        desc += "\n Subscribe to my channel to listen to full albums: "+adv_track_desc.format(vid_link)
+        desc += "\n"+adv_track_desc.format(vid_link)
 
 
 if not 'trklg' in loop_f:
