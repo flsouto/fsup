@@ -156,7 +156,7 @@ files = {
 
 data = {
     "name": title,
-    "description": desc+"\n\n P.S. AI was NOT used in the creation of this loop.",
+    "description": desc+"\n\n P.S. AI was NOT used in the creation of this sound.",
     "license" : "Creative Commons 0",
     "tags": tags,
     "pack": pack,
